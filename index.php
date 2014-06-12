@@ -4,6 +4,7 @@
 
 <html>
   <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
     <title>DrupalCamp Singapore 2014 Raffle</title>
     <link rel="stylesheet" href="random.css" type="text/css"/>
     <script src="./jquery-1.10.2.min.js"></script>
