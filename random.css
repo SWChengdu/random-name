@@ -14,7 +14,7 @@ body{
  margin: 0 0 20px 0;
 }
 .header img{
-  width: 70%;
+  width: 50%;
 }
 
 .attendees-wrapper {
@@ -61,7 +61,7 @@ body{
 }
 
 #winners li:first-child {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: bold;
 }
 
@@ -71,4 +71,20 @@ body{
 
 #drumroll-image {
   display: none;
+}
+
+.sponsors ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sponsors li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sponsors li img {
+  vertical-align: middle;
+  margin: 10px;
 }
