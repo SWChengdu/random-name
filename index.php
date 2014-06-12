@@ -31,7 +31,7 @@
 </div>  
   <span id="draw-name">Pick a lucky winner</span>
   <div class="winner-container">
-  <ol id="winners">
+  <ol id="winners" reversed>
   </ol>
 </div>
 </div>

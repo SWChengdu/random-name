@@ -60,6 +60,15 @@ body{
   padding: 0;
 }
 
+#winners li:first-child {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+#winners li:first-child::after {
+  content:" !!!";
+} 
+
 #drumroll-image {
   display: none;
 }

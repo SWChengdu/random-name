@@ -4,9 +4,12 @@ $(document).ready(function(){
     $("#draw-name").click(function(){
         snd.play();
         $("#drumroll-image").show();
+        $("#draw-name").hide();
 
         setTimeout(function (){
             $("#drumroll-image").hide();
+            $("#draw-name").show();
+
             var nameList = [];  
             $("#attendees li").each(function() {
                 nameList.push($(this).text())
@@ -14,7 +17,7 @@ $(document).ready(function(){
 
             var winner = nameList[Math.floor(Math.random()*nameList.length)];
             var winnerId = winner.replace(/ /g,'');
-            $("#winners").append('<li>' + winner + '</li>');
+            $("#winners").prepend('<li>' + winner + '</li>');
             $(".winner-container").show();
 
             $("#attendees li").remove("#" + winnerId);
