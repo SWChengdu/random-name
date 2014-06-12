@@ -60,3 +60,6 @@ body{
   padding: 0;
 }
 
+#drumroll-image {
+  display: none;
+}

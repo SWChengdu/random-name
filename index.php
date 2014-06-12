@@ -26,6 +26,9 @@
     <?php } ?>
   </ul>
 </div>
+<div id="drumroll-image">
+  <img src="images/drumroll.gif">
+</div>  
   <span id="draw-name">Pick a lucky winner</span>
   <div class="winner-container">
   <ol id="winners">
