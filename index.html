@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <title>Startup Weekend Chengdu Raffle</title>
+    <link rel="stylesheet" href="random.css" type="text/css"/>
+    <script src="./jquery-1.10.2.min.js"></script>
+    <script src="./random.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+       var xmlhttp;
+       if(window.XMLHttpRequest){
+           xmlhttp = new XMLHttpRequest();
+       }
+       else{
+           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+       }
+       xmlhttp.onreadystatechange = function(){
+           if(xmlhttp.readyState == 4){
+             var lines = xmlhttp.responseText;    /*here we get all lines from text file*/
+             var lineArr = lines.split('\n'); 
+             //just to check if it works output lineArr[index] as below
+             var li_data = '';
+             for (i = 0; i < lineArr.length; i++) {
+                if(lineArr[i].match(/[\u3400-\u9FBF]/)){
+                    var get_time;
+                    if (!Date.now()) {
+                        get_time = new Date().getTime();
+                    } else {
+                        get_time = Date.now();
+                    }
+                    var li_id = lineArr.length+'_'+i+'_'+get_time;
+                    li_data += '<li id="'+li_id+'">'+lineArr[i].trim()+'</li>';
+                } else {
+                    var li_id = lineArr[i].replace(/[^a-zA-Z0-9]+/g,'_');
+                    li_data += '<li id="'+li_id+'">'+lineArr[i].trim()+'</li>';
+                }
+             }
+             $("#attendees").html(li_data);
+           }
+       }
+         xmlhttp.open("GET", "random-names.txt", true);
+         xmlhttp.send();
+    });
+    </script>
+  </head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/header-banner.jpg">
+    </div>
+    <div class="attendees-wrapper">
+      <h2>Attendees</h2>
+      <ul id="attendees">
+      </ul>
+    </div>
+    <div id="drumroll-image">
+      <img src="images/drumroll.gif">
+    </div>  
+    <span id="draw-name">Pick a lucky winner</span>
+    <div class="winner-container">
+      <ol id="winners" reversed></ol>
+    </div>
+
+    <div class="sponsors">
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</body>
